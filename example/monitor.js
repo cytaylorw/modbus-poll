@@ -7,7 +7,7 @@ const mbConfig = {
     options: {
         port: 502
     },
-    scanInterval: 100,
+    scanInterval: 1000,
     monitorInterval: 5000
 }
 
@@ -57,8 +57,8 @@ async.waterfall([
         .catch((e) => {
             // console.log(e);
         })
-        .finally( () => {
-            client.close();
+        .finally(async () => {
+            await client.close();
             console.log('Connection closed.');
             cbAsync(null, client)
         });
