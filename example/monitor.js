@@ -7,7 +7,7 @@ const mbConfig = {
     options: {
         port: 502
     },
-    scanInterval: 1000,
+    writeInterval: 1000,
     monitorInterval: 5000
 }
 
@@ -68,7 +68,7 @@ async.waterfall([
     },
     (client, cbAsync) => {
         client.init(mbConfig);
-        client.initPolling(polllingList2);
+        client.setPollingList(polllingList2);
         // console.log(client.pollingList)
         client.on('polling-start',()=> {
             console.log('Polling start')
@@ -85,7 +85,7 @@ async.waterfall([
     },
     (client, cbAsync) => {
         client.init(mbConfig);
-        client.initPolling(polllingList2);
+        client.setPollingList(polllingList2);
         client.startMonitor();
         client.on('monitor-start',()=> {
             console.log('monitor start')
