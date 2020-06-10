@@ -49,6 +49,9 @@ async.waterfall([
             client.on('error', error => {
                 console.log(error)
             })
+            client.on('stateChange', (state, message) => {
+                console.log(`${state} state: ${message}`)
+            })
             return client.read({fc: 'fc3',address: 0, length: 10});
         })
         .then(() => {
