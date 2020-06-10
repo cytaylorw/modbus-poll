@@ -1,2 +1,4 @@
 # modbus-poll
-A Modbus client is a wrapper over package modbus-serial. In addition to modbus-serial, functions to poll a list of read function codes and subscribe to the polling list.
+A Modbus client is a wrapper over package modbus-serial. Functions in addition to modbus-serial
+- poll a list of read function codes
+- monitor on the polling list
